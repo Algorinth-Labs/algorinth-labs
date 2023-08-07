@@ -26,7 +26,7 @@ export default function ComingSoonContainer() {
     const emailInput = form.current.elements.message;
     const emailValue = emailInput.value;
 
-    
+
     // validate the email input value
     if (!emailValue) {
       setErrorMessage("Email is required");
@@ -49,29 +49,29 @@ export default function ComingSoonContainer() {
     // emailjs.sendForm('service_g122hkf', 'template_5gigqtc', form.current, 'F6ufjQHQIKDkpfu9d')
 
     emailjs.sendForm(serviceId, templateId, form.current, publicKey)
-    .then((result) => {
-      // show the user a success message
-      setSuccessMessage('Email sent successfully!');
-      form.current.reset(); // reset the form
+      .then((result) => {
+        // show the user a success message
+        setSuccessMessage('Email sent successfully!');
+        form.current.reset(); // reset the form
 
-      // hide the success message after 3 seconds
-      setTimeout(() => {
-        setSuccessMessage(null);
-      }, 3000);
-    }, (error) => {
-      // show the user an error
-      setErrorMessage('An error occurred while sending the email: ' + error.text);
+        // hide the success message after 3 seconds
+        setTimeout(() => {
+          setSuccessMessage(null);
+        }, 3000);
+      }, (error) => {
+        // show the user an error
+        setErrorMessage('An error occurred while sending the email: ' + error.text);
 
-      // hide the error message after 3 seconds
-      setTimeout(() => {
-        setErrorMessage(null);
-      }, 3000);
-    });
+        // hide the error message after 3 seconds
+        setTimeout(() => {
+          setErrorMessage(null);
+        }, 3000);
+      });
   };
 
   return (
     <div className="h-screen relative z-0 w-full bg-[#08111F] bg-[url('/images/background-resource.png')] bg-contain bg-no-repeat bg-center overflow-hidden">
-      <div className="flex w-full mx-auto">
+      <div className="flex sm:w-full sm:mx-auto sm:flex-row flex-col justify-center items-center">
         <Image src="/images/logo.png" width={310} height={220} alt="Brand logo" placeholder="blur" blurDataURL="data" priority className="max-w-[21.5vw] max-h-[21.4vh] object-contain" />
         <div className="flex flex-1 justify-center max-w-[65vw]">
           {/* <p className="text-[46px] text-center text-white leading-[96px] font-poppins font-thin ">Launching Soon...</p> */}
@@ -82,9 +82,9 @@ export default function ComingSoonContainer() {
       <form ref={form}>
         {/* Email form */}
         <div className="w-full absolute z-10 bottom-[3.14%] flex justify-center">
-          <div className="max-w-[52vw] w-full flex flex-row h-[60px] rounded-[10px] bg-white ">
-            <input type="email" name="message" placeholder="Email Address" className="w-full h-[60px] p-4 rounded-[10px] outline-0 border-none text-black text-[25px] font-normal font-poppins placeholder:text-black/60 placeholder:text-[20px] placeholder:font-normal" />
-            <button onClick={sendEmail} className="h-[60px] text-white w-full max-w-[220px] bg-secondary/80 hover:bg-secondary transition duration-300 ease-in-out delay-75 rounded-r-[10px] text-2xl font-poppins font-normal">
+          <div className="sm:max-w-[52vw] md:w-full mb-32 sm:mb-0 flex sm:flex-row flex-col h-[60px] rounded-[10px] bg-white ">
+            <input type="email" name="message" placeholder="Email Address" className="sm:w-full w-48 C p-4 rounded-[10px] outline-0 border-none text-black text-[25px] font-normal font-poppins placeholder:text-black/60 placeholder:text-[20px] placeholder:font-normal" />
+            <button onClick={sendEmail} className="text-white w-full sm:max-w-[220px] rounded-[10px] bg-secondary/80 hover:bg-secondary transition duration-300 ease-in-out delay-75 rounded-r-[10px] text-2xl font-poppins font-normal">
               Notify Me
             </button>
           </div>
@@ -95,8 +95,8 @@ export default function ComingSoonContainer() {
       </form>
 
       {/* Balls */}
-      <div className=" absolute bottom-[-3.2vh] left-[-52vh] z-[1] w-[73.632vh] h-[73.632vh] rounded-full gradient1"></div>
-      <div className="flex flex-col justify-center gap-7 absolute bottom-[-3.2vh] right-[-52vh] z-[1] w-[73.632vh] h-[73.632vh] rounded-full gradient2 pl-[5%]">
+      <div className=" absolute bottom-[1.vh] sm:bottom-[-3.2vh] left-[-68vh] sm:left-[-52vh] z-[1] w-[73.632vh] h-[73.632vh] rounded-full gradient1"></div>
+      <div className="flex flex-col justify-center gap-7 absolute sm:bottom-[-3.2vh] bottom-[1.vh] right-[-65vh] sm:right-[-52vh] z-[1] w-[73.632vh] h-[73.632vh] rounded-full gradient2 pl-[3%]">
         {/* <FaFacebookF color="#fff" size={30} /> */}
         {/* <FaTwitter color="#fff" size={30} className="cursor-pointer" /> */}
         <Link href="#">
@@ -115,7 +115,7 @@ export default function ComingSoonContainer() {
 
 
 
-      {/* Email form
+{/* Email form
       <div className="w-full absolute z-10 bottom-[3.14%] flex justify-center">
         <div className="max-w-[52vw] w-full flex flex-row h-[72.1px] rounded-[10px] bg-white ">
           <input type="email" placeholder="Email Address" className="w-full h-[72.1px] p-4 rounded-[10px] outline-0 border-none text-black text-[28px] font-normal font-poppins placeholder:text-black/60 placeholder:text-[28px] placeholder:font-normal" />
