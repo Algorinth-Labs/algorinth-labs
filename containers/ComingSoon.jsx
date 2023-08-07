@@ -83,7 +83,7 @@ export default function ComingSoonContainer() {
         {/* Email form */}
         <div className="w-full absolute z-10 bottom-[3.14%] flex justify-center">
           <div className="sm:max-w-[52vw] md:w-full mb-32 sm:mb-0 flex sm:flex-row flex-col h-[60px] rounded-[10px] bg-white ">
-            <input type="email" name="message" placeholder="Email Address" className="sm:w-full w-48 C p-4 rounded-[10px] outline-0 border-none text-black text-[25px] font-normal font-poppins placeholder:text-black/60 placeholder:text-[20px] placeholder:font-normal" />
+            <input type="email" name="message" placeholder="Email Address" className="sm:w-full w-48 C p-4 rounded-[10px] outline-0 border-none text-black sm:text-[25px] text-[15px] font-normal font-poppins placeholder:text-black/60 placeholder:text-[20px] placeholder:font-normal" />
             <button onClick={sendEmail} className="text-white w-full sm:max-w-[220px] rounded-[10px] bg-secondary/80 hover:bg-secondary transition duration-300 ease-in-out delay-75 rounded-r-[10px] text-2xl font-poppins font-normal">
               Notify Me
             </button>
